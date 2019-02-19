@@ -48,7 +48,7 @@ class PlayerController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('single-player');
     }
 
     /**

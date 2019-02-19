@@ -7,21 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1>all players</h1>
-
-    
-    @foreach ($players as $player)
-    
-    {{ $player->first_name }}
-    <br>
-    {{ $player->last_name }}
-    <br>
-    {{ $player->email }}
-    @endforeach
-   
-
-        
     
 </body>
 </html>

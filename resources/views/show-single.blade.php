@@ -15,7 +15,7 @@
     <h2>{{ $team->address }}</h2>
 
     @foreach ($team->players as $player)
-    <a href="{{ '/players/'. $player->id }}"> {{ $player->first_name }}  {{ $player->last_name }}</a><br>
+    <a href="{{ '/show-single/'. $player->id }}"> {{ $player->first_name }}  {{ $player->last_name }}</a><br>
 
     @endforeach
     
