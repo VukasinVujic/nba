@@ -48,7 +48,8 @@ class PlayerController extends Controller
      */
     public function show($id)
     {
-        return view('single-player');
+        $player = Player::findOrFail($id);
+        return view('single-player', compact('player'));
     }
 
     /**

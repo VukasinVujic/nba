@@ -10,7 +10,7 @@ class Team extends Model
         'name','email','address','city'
     ];
 
-    public function players(){
-        return $this->hasMany(Player::class, 'team_id') ;
+    public function player(){
+        return $this->hasMany(Player::class) ;
     }
 }
