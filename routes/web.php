@@ -15,11 +15,13 @@
 //     return view('welcome');
 // });
 
-Route::get('/teams/{id}', 'TeamController@show');
-Route::get('/teams', 'TeamController@index')->name('allTeams');
 
-Route::get('/players/{id}', 'PlayerController@show');
-Route::get('/players', 'PlayerController@index');
+
+
+Route::get('/logout', 'LoginsController@logout')->name('logout');
+
+
+Route::group(['middleware' => ['guest']] , function(){
 
 Route::get('/register', 'RegistersController@create')->name('register');
 Route::post('/register', 'RegistersController@store');
@@ -27,5 +29,19 @@ Route::post('/register', 'RegistersController@store');
 Route::get('/login', 'LoginsController@create')->name('show-login');
 Route::post('/login','LoginsController@store')->name('login');
 
-Route::get('/logout', 'LoginsController@logout')->name('logout');
+}) ;
+
+Route::group(['middleware' => ['auth']], function (){
+
+Route::get('/teams/{id}', 'TeamController@show');
+Route::get('/teams', 'TeamController@index')->name('allTeams');
+
+Route::get('/players/{id}', 'PlayerController@show');
+Route::get('/players', 'PlayerController@index');
+
+
+});
+
+
+
 

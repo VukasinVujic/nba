@@ -6,6 +6,10 @@
 
 @endsection
 
+@section('content')
+    
+
+
 <div class="container">
 
     <form method="POST" action="{{ route('register')}}" >
@@ -50,7 +54,6 @@
 
             </form>
 
-
-
-
 </div>
+
+@endsection

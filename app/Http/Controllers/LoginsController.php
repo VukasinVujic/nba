@@ -10,7 +10,7 @@ class LoginsController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->route('logout');
+       return redirect()->route('allTeams');
     }
 
     public function create()
